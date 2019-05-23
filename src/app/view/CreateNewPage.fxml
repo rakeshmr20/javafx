@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="470.0" prefWidth="800.0" style="-fx-background-color: #2d3447;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.CNPController">
+   <bottom>
+      <AnchorPane prefHeight="43.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="CNsaveBtn" layoutX="658.0" layoutY="9.0" mnemonicParsing="false" onAction="#Save" style="-fx-background-color: #00FF00;" text="Save" visible="false" />
+            <Button layoutX="720.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleCancel" style="-fx-background-color: #FF0000; -fx-text-fill: #ffffff;" text="Cancel" />
+            <Button fx:id="nextTab" layoutX="601.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleNextTab" style="-fx-background-color: #2196f3;" text="Next" textFill="WHITE" />
+            <Label fx:id="CNlogMsg" layoutX="189.0" layoutY="13.0" text="Log Message" textFill="#e7f20f" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <top>
+      <Label text="Enter Candidate details" textFill="#1668f6" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="17.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <TabPane fx:id="tabAll" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="tab1" text="Personnel Details">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="30.0" layoutY="52.0" prefHeight="284.0" prefWidth="669.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="364.20001220703125" minWidth="10.0" prefWidth="112.20002441406248" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="576.4" minWidth="10.0" prefWidth="506.59997558593756" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Name" textFill="LAVENDER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                              <Label text="USN" textFill="LAVENDER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                              <Label text="Email" textFill="LAVENDER" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                              <Label text="Phone" textFill="LAVENDER" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                              <Label text="Gender" textFill="LAVENDER" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                              <Label text="Date of Birth" textFill="LAVENDER" GridPane.rowIndex="5">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Label>
+                              <TextField fx:id="CNname" promptText="Enter Name" GridPane.columnIndex="1" />
+                              <TextField fx:id="CNusn" promptText="Enter USN *4AL16IS042*" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="CNemail" promptText="Enter email address" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="CNphone" promptText="Enter Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <children>
+                                    <RadioButton fx:id="CNmale" mnemonicParsing="false" selected="true" text="Male" textFill="LAVENDER">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="gender" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton fx:id="CNfemale" mnemonicParsing="false" text="Female" textFill="LAVENDER" toggleGroup="$gender" />
+                                    <RadioButton fx:id="CNothers" mnemonicParsing="false" text="Others" textFill="LAVENDER" toggleGroup="$gender" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" top="15.0" />
+                                 </padding>
+                              </HBox>
+                              <DatePicker fx:id="CNdob" prefHeight="26.0" prefWidth="198.0" promptText="DD/MM/YYYY" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           </children>
+                           <padding>
+                              <Insets left="50.0" />
+                           </padding>
+                        </GridPane>
+                        <Label layoutX="303.0" layoutY="14.0" text="Personnel Details" textFill="#1668f6">
+                           <font>
+                              <Font name="Comic Sans MS" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tab2" text="Academic Details">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane layoutX="5.0" layoutY="42.0" prefHeight="372.8" prefWidth="800.0" AnchorPane.bottomAnchor="-12.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="42.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="750.0" style="-fx-background-color: #2d3447;">
+                                 <children>
+                                    <GridPane layoutX="28.0" layoutY="34.0" prefHeight="400.0" prefWidth="660.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.39996337890625" minWidth="10.0" prefWidth="223.5999755859375" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="437.20001220703125" minWidth="10.0" prefWidth="436.4000244140625" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="48.999975585937506" minHeight="10.0" prefHeight="48.999975585937506" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="139.20000000000002" minHeight="10.0" prefHeight="139.20000000000002" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="55.39998779296877" minHeight="0.0" prefHeight="32.80000000000001" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="56.79997558593749" minHeight="10.0" prefHeight="55.19999999999999" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="88.1999572753906" minHeight="10.0" prefHeight="47.20004882812498" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="10th - (Percentage)" textFill="LAVENDER" />
+                                          <Label text="12th - (Percentage)" textFill="LAVENDER" GridPane.rowIndex="1" />
+                                          <Label text="Current Degree - Branch" textFill="LAVENDER" GridPane.rowIndex="2" />
+                                          <Label text="SEMWISE MARKS" textFill="LAVENDER" GridPane.rowIndex="3" />
+                                          <Label text="Total Marks" textFill="LAVENDER" GridPane.rowIndex="4" />
+                                          <Label text="Aggregate" textFill="LAVENDER" GridPane.rowIndex="5" />
+                                          <TextField fx:id="CN10th" maxWidth="-Infinity" opacity="0.88" prefHeight="26.0" prefWidth="218.0" promptText="\%" GridPane.columnIndex="1" />
+                                          <TextField fx:id="CN12th" maxWidth="-Infinity" opacity="0.88" prefHeight="26.0" prefWidth="218.0" promptText="\%" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <Label text="History of Backlogs" textFill="LAVENDER" GridPane.rowIndex="6" />
+                                          <ComboBox fx:id="CNbranch" prefWidth="150.0" promptText="Select Branch" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <GridPane prefHeight="127.0" prefWidth="397.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.20001220703125" minWidth="10.0" prefWidth="96.39998779296874" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.4000244140625" minWidth="10.0" prefWidth="120.60001220703124" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.4000244140625" minWidth="10.0" prefWidth="80.59998779296876" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.4000244140625" minWidth="10.0" prefWidth="141.60001220703123" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="SEM 1" textFill="LAVENDER">
+                                                   <GridPane.margin>
+                                                      <Insets left="20.0" />
+                                                   </GridPane.margin></Label>
+                                                <Label text="SEM 3" textFill="LAVENDER" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets left="20.0" />
+                                                   </GridPane.margin></Label>
+                                                <Label text="SEM 5" textFill="LAVENDER" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets left="20.0" />
+                                                   </GridPane.margin></Label>
+                                                <Label text="SEM 7" textFill="LAVENDER" GridPane.rowIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets left="20.0" />
+                                                   </GridPane.margin></Label>
+                                                <Label text="SEM 2" textFill="LAVENDER" GridPane.columnIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets left="20.0" />
+                                                   </GridPane.margin></Label>
+                                                <Label text="SEM 4" textFill="LAVENDER" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets left="20.0" />
+                                                   </GridPane.margin></Label>
+                                                <Label text="SEM 6" textFill="LAVENDER" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                                   <GridPane.margin>
+                                                      <Insets left="20.0" />
+                                                   </GridPane.margin></Label>
+                                                <Label text="SEM 8" textFill="LAVENDER" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                   <GridPane.margin>
+                                                      <Insets left="20.0" />
+                                                   </GridPane.margin></Label>
+                                                <TextField fx:id="CNsem3" opacity="0.89" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                <TextField fx:id="CNsem1" opacity="0.88" promptText="\%" GridPane.columnIndex="1" />
+                                                <TextField fx:id="CNsem5" opacity="0.89" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                <TextField fx:id="CNsem7" opacity="0.89" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                <TextField fx:id="CNsem2" opacity="0.89" GridPane.columnIndex="3" />
+                                                <TextField fx:id="CNsem4" opacity="0.89" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                                <TextField fx:id="CNsem6" opacity="0.89" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                                <TextField fx:id="CNsem8" opacity="0.89" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                             </children>
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin>
+                                          </GridPane>
+                                          <TextField fx:id="CNtotalMarks" maxWidth="-Infinity" onAction="#onClickOfTotalMarks" onMouseClicked="#onClickOfTotalMarks" opacity="0.89" prefHeight="26.0" prefWidth="215.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                          <TextField fx:id="CNaggregate" maxWidth="-Infinity" opacity="0.89" prefHeight="26.0" prefWidth="214.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                          <TextField fx:id="CNbcklg" maxWidth="-Infinity" opacity="0.89" prefHeight="26.0" prefWidth="213.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <Label layoutX="292.0" layoutY="-4.0" text="Academic Details" textFill="#0e83e5">
+                           <font>
+                              <Font name="Comic Sans MS" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tab3" text="Professional Skills">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane layoutX="57.0" layoutY="57.0" prefHeight="266.0" prefWidth="706.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="348.20001220703125" minWidth="10.0" prefWidth="223.2000244140625" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="553.0" minWidth="10.0" prefWidth="483.99997558593753" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Programming Languages" textFill="LAVENDER" />
+                              <Label text="Professional Tools Used" textFill="LAVENDER" GridPane.rowIndex="1" />
+                              <Label text="Specialisation" textFill="LAVENDER" GridPane.rowIndex="2" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <TextField fx:id="CNsp1" opacity="0.89" promptText="1." />
+                                    <TextField fx:id="CNsp2" opacity="0.89" promptText="2." />
+                                    <TextField fx:id="CNsp3" opacity="0.89" promptText="3." />
+                                 </children>
+                                 <padding>
+                                    <Insets top="15.0" />
+                                 </padding>
+                              </HBox>
+                              <TextField fx:id="CNprglang" opacity="0.89" promptText="Separated by commas ( , )" GridPane.columnIndex="1" />
+                              <TextField fx:id="CNproftools" opacity="0.89" promptText="Separated by commas ( , )" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </GridPane>
+                        <Label layoutX="306.0" layoutY="14.0" text="Professional Skills" textFill="#0a9efa">
+                           <font>
+                              <Font name="Comic Sans MS" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tab4" text="Resume">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="116.0" layoutY="48.0" prefHeight="100.0" prefWidth="612.0" spacing="30.0">
+                           <children>
+                              <Label text="Choose your Resume file : " textFill="LAVENDER">
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </Label>
+                              <Button fx:id="btnFileChoose" mnemonicParsing="false" onAction="#fileChoose" style="-fx-background-color: #2196f3;" text="Select" textFill="WHITE" />
+                              <Text fx:id="fileNameDisplay" fill="LAVENDER" strokeType="OUTSIDE" strokeWidth="0.0" text="temp_filename" visible="false">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </HBox>
+                        <Label layoutX="281.0" layoutY="14.0" text="Upload Resume" textFill="#0995f2">
+                           <font>
+                              <Font name="Comic Sans MS" size="23.0" />
+                           </font>
+                        </Label>
+                        <Pane fx:id="dispPDF" layoutX="161.0" layoutY="135.0" prefHeight="224.0" prefWidth="522.0" visible="false">
+                           <children>
+                              <Button layoutX="193.0" layoutY="68.0" mnemonicParsing="false" onAction="#viewPDF" style="-fx-background-color: #B0E0E6;" text="Open selected PDF file" textFill="#0d022c" />
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,25 @@
+.menu-bar{
+  -fx-background-color: #2d3449;
+  -fx-border-color:  #2d3447;
+ -fx-border-width: 1
+
+}
+
+.menu .label {
+    -fx-font-size:  16 pt;
+    -fx-font-family: "Comic Sans MS";
+    -fx-text-fill: #dedede;
+
+}
+
+
+.menu:hover {
+    -fx-background-color: #0019F9;
+}
+
+.menu-item .label{
+     -fx-font-size: 14 pt;
+    /*-fx-label-line-length: 8; */
+      -fx-background-color: #ffffff;
+      -fx-text-fill: #0F0F10;
+}

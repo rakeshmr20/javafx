@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="450.0" prefWidth="850.0" style="-fx-background-color: #2d3440;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.view.MainPageController">
+   <top>
+      <Label text="Developed by :" textFill="#07e6ea" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="20.0" />
+         </BorderPane.margin>
+         <font>
+            <Font name="Comic Sans MS" size="40.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="89.0" prefWidth="850.0" spacing="3.0">
+               <children>
+                  <Label text="Alva's Institute of Engineering and Technology, Mijar" textFill="#ffb3b3">
+                     <font>
+                        <Font name="Rockwell" size="22.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="850.0" spacing="20.0">
+                     <padding>
+                        <Insets top="2.0" />
+                     </padding>
+                     <children>
+                        <Label text="File Structures Project : " textFill="#ff5151">
+                           <font>
+                              <Font name="Rockwell" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label text="Placement Record Management" textFill="#fffdfd">
+                           <font>
+                              <Font name="Rockwell" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="850.0" spacing="20.0">
+                     <padding>
+                        <Insets top="2.0" />
+                     </padding>
+                     <children>
+                        <Label text="Guided By :      " textFill="#ff7777">
+                           <font>
+                              <Font name="Rockwell" size="22.0" />
+                           </font>
+                        </Label>
+                        <Label text="Mrs. Divya Ravi N" textFill="#fffdfd">
+                           <font>
+                              <Font name="Rockwell" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="850.0" spacing="20.0">
+                     <padding>
+                        <Insets top="2.0" />
+                     </padding>
+                     <children>
+                        <Label text="Deptartment of Information Science and Engineering" textFill="#bdb0b0">
+                           <font>
+                              <Font name="Rockwell" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <AnchorPane prefHeight="311.0" prefWidth="850.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="300.0" prefWidth="800.0" spacing="10.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 2; -fx-translate-y: 2;">
+                                       <image>
+                                          <Image url="@../../resources/-lcGPQum_400x400.jpg" />
+                                       </image>
+                                       <effect>
+                                          <Glow level="0.44" />
+                                       </effect>
+                                       <cursor>
+                                          <Cursor fx:constant="DISAPPEAR" />
+                                       </cursor>
+                                    </ImageView>
+                                    <Label text="Rakesh M R" textFill="WHITE" />
+                                    <Label text="4AL16IS042" textFill="#0bfd3f" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="156.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/rac.jpg" />
+                                       </image>
+                                       <effect>
+                                          <Glow />
+                                       </effect></ImageView>
+                                    <Label text="Rachana T" textFill="WHITE" />
+                                    <Label text="4AL16IS061" textFill="#2bff2b" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/PhotoGrid_1558025664108.jpg" />
+                                       </image></ImageView>
+                                    <Label text="Mouna R" textFill="WHITE" />
+                                    <Label text="4AL16IS063" textFill="#25ff5c" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../resources/Trupthi.JPG" />
+                                       </image>
+                                       <effect>
+                                          <Glow />
+                                       </effect>
+                                    </ImageView>
+                                    <Label text="Trupthi C" textFill="WHITE" />
+                                    <Label text="4AL16IS057" textFill="#27fa4b" />
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets left="30.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="46.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="716.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleHome" style="-fx-background-color: #2196f3;" text="Home" textFill="#f8f4f4" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>
