@@ -45,7 +45,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Placement Registry - FS Project");
+		this.primaryStage.setTitle("Placement Register Management - FS Project by Rakesh M R");
 		Image img = new  Image("resources/icons8_groups_80px.png");
 		this.primaryStage.getIcons().add(img);
 		mainLayout = FXMLLoader.load(getClass().getResource("view/MainPage.fxml"));
